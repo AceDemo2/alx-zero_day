@@ -1,10 +1,10 @@
 #!/bin/bash
-pr_commit = $(git log -1 --pretty=%B)
+pr_commit=$(git log -1 --pretty=%B)
 read -p "resue previous commit, '$pr_commit'? (y/n): " msg
-while ["$msg" != "y"] && ["$msg" != "Y"] && ["$msg" != "n"] && ["$msg" != "N"]; do
+while [ "$msg" != "y" ] && [ "$msg" != "Y" ] && [ "$msg" != "n" ] && [ "$msg" != "N" ]; do
 	read -p "enter valid response (y/n): " msg
 done
-if ["$msg" = "Y"] || ["$msg" = "y"]; then
+if [ "$msg" = "Y" ] || [ "$msg" = "y" ]; then
 	c_msg = "$pr_commit"
 else
 	echo "Enter new commit msg:"
